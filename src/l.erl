@@ -187,8 +187,6 @@ format_utc_timestamp(Offset) ->
 		[Day,Mstr,Year,Hour+Offset,Minute,Second]).
 
 current_time() ->
-	{{YY,MM,DD},{H,M,S}} = calendar:gregorian_seconds_to_datetime(erlang:system_time(second)),
-	{{YY+1970,MM,DD},{H,M,S}}.
-
+	calendar:local_time().
 
 
